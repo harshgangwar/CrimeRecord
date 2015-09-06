@@ -1,0 +1,202 @@
+
+SQL> SELECT * FROM TAB;
+
+TNAME                        TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+CIRME_SEQ_ESTIMATION_MASTER    TABLE                                            
+CRIME_CATEGORY_MASTER          TABLE                                            
+CRIME_CATEGORY_NATURE_MASTER   TABLE                                            
+CRIME_CHARGESHEET_MASTER       TABLE                                            
+CRIME_WITNESS_MASTER           TABLE                                            
+DEPARTMENT_EMPLOYEES_MASTER    TABLE                                            
+DEPARTMENT_MASTER              TABLE                                            
+DESIGNATION_MASTER             TABLE                                            
+EVIDENCE_MASTER                TABLE                                            
+EVIDENCE_TYPE_MASTER           TABLE                                            
+INVESTIGATION_MASTER           TABLE                                            
+
+TNAME                          TABTYPE  CLUSTERID                               
+------------------------------ ------- ----------                               
+LOGIN_MASTER                   TABLE                                            
+POLICE_STATION_MASTER          TABLE                                            
+TERRITORY_MASTER               TABLE                                            
+VICTIMES_MASTER                TABLE                                            
+VICTIMS_FIR_MASTER             TABLE                                            
+
+16 rows selected.
+
+SQL> DESC CIRME_SEQ_ESTIMATION_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SEQUENCE_ID                               NOT NULL VARCHAR2(10)
+ FIR_NO                                             VARCHAR2(10)
+ SEQUENCE_ORDER_NO                                  VARCHAR2(10)
+ DESCRIPTION                                        VARCHAR2(40)
+
+SQL> DESC CRIME_CATEGORY_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CRIME_CATEGORY_ID                         NOT NULL VARCHAR2(10)
+ CRIME_CATEGORY_NAME                                VARCHAR2(30)
+ DESCRIPTION                                        VARCHAR2(40)
+
+SQL> DESC CRIME_CATEGORY_NATURE_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ NATURE_ID                                 NOT NULL VARCHAR2(10)
+ CATEGORY_ID                                        VARCHAR2(10)
+ CRIME_NAME                                         VARCHAR2(30)
+ DESCRIPTION                                        VARCHAR2(20)
+
+SQL> DESC CRIME_CATEGORY_NATURE_MASTER   TABLE
+Usage: DESCRIBE [schema.]object[@db_link]
+SQL> DESC CRIME_CATEGORY_NATURE_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ NATURE_ID                                 NOT NULL VARCHAR2(10)
+ CATEGORY_ID                                        VARCHAR2(10)
+ CRIME_NAME                                         VARCHAR2(30)
+ DESCRIPTION                                        VARCHAR2(20)
+
+SQL> DESC CRIME_CHARGESHEET_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CHARGE_SHEET_NO                           NOT NULL VARCHAR2(10)
+ CHARGE_SHEET_DATE                                  DATE
+ CHARGE_SHEET_DETAILS                               VARCHAR2(30)
+ FIR_NO                                             VARCHAR2(10)
+ PRODUCED_COURT_NAME                                VARCHAR2(30)
+ CHARGE_SHEET_FILED_BY                              VARCHAR2(30)
+
+SQL> DESC CRIME_WITNESS_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ WITNESS_ID                                NOT NULL VARCHAR2(10)
+ FIR_NO                                             VARCHAR2(10)
+ WITNESS_COLLECTED_DATE                             DATE
+ WITNESS_INFORMATION                                VARCHAR2(40)
+
+SQL> DESC DEPARTMENT_EMPLOYEES_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPLOYEE_NO                               NOT NULL VARCHAR2(10)
+ EMPLOYEE_NAME                                      VARCHAR2(30)
+ DESIGNATION_ID                                     VARCHAR2(10)
+ DEPARTMENT_NO                                      VARCHAR2(10)
+ DATE_OF_BIRTH                                      DATE
+ DATE_OF_JOIN                                       DATE
+ DNO                                                VARCHAR2(10)
+ STREET                                             VARCHAR2(20)
+ CITY                                               VARCHAR2(20)
+ STATE                                              VARCHAR2(20)
+ COUNTRY                                            VARCHAR2(20)
+ PIN                                                NUMBER(10)
+ PHONE                                              NUMBER(16)
+ EMAIL_ID                                           VARCHAR2(40)
+
+SQL> DESC DEPARTMENT_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPARTMENT_NO                             NOT NULL VARCHAR2(10)
+ DEPARTMENT_NAME                                    VARCHAR2(30)
+ DESCRIPTION                                        VARCHAR2(30)
+ HIGHEST_DESG_ID                                    VARCHAR2(10)
+
+SQL> DESC DESIGNATION_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DESIGNATION_ID                            NOT NULL VARCHAR2(10)
+ DESIGNATION_NAME                                   VARCHAR2(30)
+ DESCRIPTION                                        VARCHAR2(30)
+
+SQL> DESC EVIDENCE_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EVIDENCE_ID                               NOT NULL VARCHAR2(10)
+ INVESTIGATION_ID                                   VARCHAR2(15)
+ EVIDENCE_TYPE_ID                                   VARCHAR2(15)
+ EVIDENCE_COLLECTED_DATE                            DATE
+
+SQL> DESCEVIDENCE_TYPE_MASTER
+SP2-0734: unknown command beginning "DESCEVIDEN..." - rest of line ignored.
+SQL> DESC EVIDENCE_TYPE_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EVIDENCE_ID                               NOT NULL VARCHAR2(10)
+ EVIDENCE_NAME                                      VARCHAR2(30)
+ DESCRIPTION                                        VARCHAR2(40)
+
+SQL> DESC INVESTIGATION_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INVESTIGATION_ID                          NOT NULL VARCHAR2(10)
+ START_DATE                                         DATE
+ END_DATE                                           DATE
+ FIRNO                                              VARCHAR2(20)
+
+SQL> DESC LOGIN_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ LOGIN_USER_NAME                                    VARCHAR2(10)
+ PROFILE_ID                                         VARCHAR2(10)
+ EMPLOYEE_NO                                        VARCHAR2(10)
+ LOGIN_OLD_PW                                       VARCHAR2(30)
+ LOGIN_CURRENT_PW                                   VARCHAR2(30)
+ LOGIN_CHANGE_DATE                                  VARCHAR2(30)
+
+SQL> DESC POLICE_STATION_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ POLICE_STATION_ID                         NOT NULL VARCHAR2(10)
+ POLICE_SATION_NAME                                 VARCHAR2(30)
+ POLICE_TERITORY_ID                                 VARCHAR2(10)
+ POLICE_STARTING_DATE                               DATE
+ INCHARGE_ID                                        VARCHAR2(10)
+ DNO                                                VARCHAR2(10)
+ STREET                                             VARCHAR2(20)
+ CITY                                               VARCHAR2(20)
+ STATE                                              VARCHAR2(20)
+ COUNTRY                                            VARCHAR2(20)
+ PIN                                                NUMBER(10)
+ PHONE                                              NUMBER(16)
+ FAX_NO                                             NUMBER(16)
+ EMAIL_ID                                           VARCHAR2(30)
+
+SQL> DESC TERRITORY_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TERRITORY_ID                              NOT NULL VARCHAR2(10)
+ TERRITORY_NAME                                     VARCHAR2(30)
+ DESCRIPTION                                        VARCHAR2(30)
+
+SQL> DESC VICTIMES_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ VICTIM_ID                                 NOT NULL VARCHAR2(10)
+ VICTIME_NAME                                       VARCHAR2(30)
+ DNO                                                VARCHAR2(10)
+ STREET                                             VARCHAR2(20)
+ CITY                                               VARCHAR2(20)
+ STATE                                              VARCHAR2(20)
+ COUNTRY                                            VARCHAR2(20)
+ PIN                                                NUMBER(10)
+ PHONE_NO                                           NUMBER(16)
+ DATE_OF_BIRTH                                      DATE
+ MAIL_ID                                            VARCHAR2(30)
+ OTHER_DETAILS                                      VARCHAR2(30)
+ VICTIM_REGISTRANT_DATE                             DATE
+
+SQL> DESC VICTIMS_FIR_MASTER
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ FIR_NO                                    NOT NULL  VARCHAR2(10)
+ CRIME_NATURE_ID                                    VARCHAR2(10)
+ ADDRESS                                                   VARCHAR2(30)
+ DETAILS                                                      VARCHAR2(30)
+ FIR_REGISTRATION_DATE                         DATE
+ VICTIM_ID                                                    VARCHAR2(10)
+ INVESTIGATION_OFFICER_ID                    VARCHAR2(10)
+ CRIME_DATE                                              DATE
+
+
+
